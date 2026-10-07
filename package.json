@@ -1,0 +1,12 @@
+{
+  "name": "portme",
+  "private": true,
+  "scripts": {
+    "build": "npm ci --prefix web && npm run build --prefix web && npm ci --prefix api",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.148.0"
+  }
+}

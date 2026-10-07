@@ -8,3 +8,5 @@ dist/
 # Local
 .playwright-mcp/
 *.pdf
+.dev.vars
+.wrangler/
