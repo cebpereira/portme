@@ -37,9 +37,10 @@ export const en: Content = {
   about: {
     heading: 'About',
     paragraphs: [
-      'I do web development with a back-end focus, mostly PHP and Laravel. When a project calls for it, I build the interface too — React, Vue.js, Tailwind CSS.',
-      'I look after the data layer in PostgreSQL, MySQL and SQL Server, and the infrastructure around it: containerisation with Docker, observability, and keeping Linux servers healthy.',
-      'I look for work that pushes me technically. I study Information Systems at UESB.',
+      'I have been a back-end developer since 2023, with PHP and Laravel at the centre of the work. I build and maintain production systems that companies run on: corporate benefits management, a CRM with automated credit analysis, integrations between third-party platforms.',
+      'Much of my work is making systems talk to each other: REST APIs, webhooks, queues and async jobs, sync between platforms with a record of what changed. I also spend a lot of time with data, from modelling and querying PostgreSQL to importing spreadsheets and PDFs that arrive in formats nobody controls.',
+      'I look after the path to production too: Docker environments, CI/CD deploys, observability and Linux servers. When the delivery calls for it, I build the interface as well, in React with TypeScript.',
+      'I prefer changes that reach production without surprises, backed by automated tests, static analysis and rollouts rehearsed first on a copy of real data.',
     ],
   },
   experience: {

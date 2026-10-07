@@ -37,9 +37,10 @@ export const pt: Content = {
   about: {
     heading: 'Sobre',
     paragraphs: [
-      'Trabalho com desenvolvimento web focado em back-end, principalmente PHP e Laravel. Quando o projeto pede, também construo a interface — React, Vue.js, Tailwind CSS.',
-      'Cuido da camada de dados em PostgreSQL, MySQL e SQL Server, e da infraestrutura em volta dela: conteinerização com Docker, observabilidade e sustentação de servidores Linux.',
-      'Procuro projetos que desafiem tecnicamente. Estudo Sistemas de Informação na UESB.',
+      'Sou desenvolvedor back-end desde 2023, com PHP e Laravel no centro do trabalho. Construo e mantenho sistemas que estão em produção e sustentam a operação das empresas: gestão de benefícios corporativos, CRM com análise de crédito automatizada, integrações entre plataformas de terceiros.',
+      'Boa parte do meu trabalho é fazer sistemas conversarem: APIs REST, webhooks, filas e jobs assíncronos, sincronização entre plataformas com registro do que mudou. Também passo muito tempo com dados, da modelagem e das consultas em PostgreSQL à importação de planilhas e PDFs que chegam em formatos que ninguém controla.',
+      'Cuido do caminho até a produção: ambientes em Docker, deploy por CI/CD, observabilidade e servidores Linux. Quando a entrega pede, construo a interface também, em React com TypeScript.',
+      'Prefiro mudanças que chegam em produção sem surpresa, com testes automatizados, análise estática e rollouts ensaiados antes numa cópia dos dados reais.',
     ],
   },
   experience: {
