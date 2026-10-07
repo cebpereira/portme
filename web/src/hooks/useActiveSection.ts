@@ -21,8 +21,22 @@ export function useActiveSection(ids: string[]): string | null {
       { rootMargin: '-10% 0px -70% 0px', threshold: 0 },
     )
 
+    const last = elements[elements.length - 1]
+
+    const handleScroll = () => {
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+
+      if (atBottom && last) setActive(last.id)
+    }
+
     elements.forEach((element) => observer.observe(element))
-    return () => observer.disconnect()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [ids])
 
   return active
