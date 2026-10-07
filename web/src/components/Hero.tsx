@@ -1,4 +1,4 @@
-import { AzulejoPanel } from '@/components/AzulejoPanel'
+import { HeroIllustration } from '@/components/HeroIllustration'
 import { useContent } from '@/lib/i18n'
 
 export function Hero() {
@@ -26,7 +26,7 @@ export function Hero() {
           </p>
         </div>
 
-        <AzulejoPanel className="mx-auto w-full max-w-80 lg:max-w-none" />
+        <HeroIllustration className="mx-auto max-w-80 lg:max-w-none" />
       </div>
     </div>
   )
