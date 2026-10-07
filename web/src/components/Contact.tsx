@@ -12,7 +12,7 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="mt-20 bg-cobalt text-chalk sm:mt-24">
+    <section id="contact" className="mt-20 bg-brand-block text-chalk sm:mt-24">
       <div className="mx-auto grid max-w-[58rem] gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] lg:gap-x-16 lg:gap-y-10 lg:px-12">
         <div className="lg:col-start-1 lg:row-start-1">
           <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.02]">

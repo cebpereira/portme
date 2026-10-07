@@ -59,7 +59,7 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    'border-chalk/45 bg-chalk/5 text-chalk placeholder:text-chalk/45 selection:bg-chalk selection:text-cobalt focus-visible:border-ochre aria-invalid:border-ochre aria-invalid:ring-0'
+    'border-chalk/45 bg-chalk/5 text-chalk placeholder:text-chalk/45 selection:bg-chalk selection:text-brand-block focus-visible:border-ochre aria-invalid:border-ochre aria-invalid:ring-0'
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="lg:pt-2">
@@ -133,7 +133,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={submitting}
-        className="mt-7 bg-chalk text-cobalt hover:bg-ochre hover:text-ink disabled:opacity-60"
+        className="mt-7 bg-chalk text-brand-block hover:bg-ochre hover:text-ink disabled:opacity-60"
       >
         {submitting ? content.contact.submitting : content.contact.submit}
       </Button>

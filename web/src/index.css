@@ -21,6 +21,7 @@
     --color-slate: var(--slate);
     --color-tile: var(--tile);
     --color-ochre: var(--ochre);
+    --color-brand-block: var(--brand-block);
 
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -66,6 +67,7 @@
     --slate: #5a6275;
     --tile: #c3cfe6;
     --ochre: #d8a31a;
+    --brand-block: #1d4595;
 
     --background: var(--chalk);
     --foreground: var(--ink);
@@ -103,8 +105,9 @@
     --cobalt-deep: #b9cbf2;
     --ink: #10141f;
     --slate: #99a1b5;
-    --tile: #26324f;
+    --tile: #314170;
     --ochre: #e6b53f;
+    --brand-block: #1d4595;
 
     --background: var(--ink);
     --foreground: var(--chalk);
