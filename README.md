@@ -18,7 +18,7 @@ cp .env.example .env     # preencha RESEND_API_KEY e CONTACT_FROM
 docker compose up --build
 ```
 
-A página fica em <http://localhost:8080>. Se a 8080 já estiver ocupada no host,
+A página fica em <http://localhost:9090>. Se a 9090 já estiver ocupada no host,
 troque com `WEB_PORT=8099 docker compose up --build`.
 
 ## Rodando em desenvolvimento
@@ -44,7 +44,7 @@ O `api` em dev lê o `.env` da raiz, se existir. Sem ele, exporte as variáveis 
 | `CONTACT_FROM` | sim | Remetente. Precisa ser de domínio verificado no Resend; sem domínio próprio use `onboarding@resend.dev`. |
 | `ALLOWED_ORIGIN` | não | Origens do CORS, separadas por vírgula. Só vale em dev — em produção tudo é same-origin. Padrão: `http://localhost:5173`. |
 | `PORT` | não | Porta da API. Padrão `3001`. |
-| `WEB_PORT` | não | Porta publicada no host pelo `web`. Padrão `8080`. |
+| `WEB_PORT` | não | Porta publicada no host pelo `web`. Padrão `9090`. |
 
 O processo da API valida a configuração no boot e morre se faltar alguma obrigatória,
 em vez de falhar só na primeira mensagem enviada.
