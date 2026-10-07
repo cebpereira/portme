@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import rateLimit from 'express-rate-limit'
-import { handleContact } from './contact.js'
+import { sendContact } from './contact.js'
 import { env } from './env.js'
 
 const app = express()
@@ -23,7 +23,10 @@ const contactLimiter = rateLimit({
   message: { error: 'rate_limited' },
 })
 
-app.post('/contact', contactLimiter, handleContact)
+app.post('/contact', contactLimiter, async (request, response) => {
+  const result = await sendContact(env, request.body)
+  response.status(result.status).json(result.body)
+})
 
 app.listen(env.port, () => {
   console.log(`[api] ouvindo na porta ${env.port}`)

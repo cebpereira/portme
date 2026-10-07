@@ -1,9 +1,16 @@
-import type { Request, Response } from 'express'
 import { Resend } from 'resend'
 import { z } from 'zod'
-import { env } from './env.js'
 
-const resend = new Resend(env.resendApiKey)
+export interface ContactConfig {
+  resendApiKey: string
+  contactTo: string
+  contactFrom: string
+}
+
+export interface ContactResult {
+  status: number
+  body: Record<string, unknown>
+}
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(120),
@@ -25,24 +32,24 @@ function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (character) => ESCAPES[character] as string)
 }
 
-export async function handleContact(request: Request, response: Response) {
-  const parsed = contactSchema.safeParse(request.body)
+export async function sendContact(config: ContactConfig, payload: unknown): Promise<ContactResult> {
+  const parsed = contactSchema.safeParse(payload)
 
   if (!parsed.success) {
-    return response.status(400).json({ error: 'invalid_payload' })
+    return { status: 400, body: { error: 'invalid_payload' } }
   }
 
   const { name, email, subject, message, company_url } = parsed.data
 
   if (company_url && company_url.trim() !== '') {
     console.warn('[contact] honeypot preenchido, descartando mensagem')
-    return response.status(200).json({ ok: true })
+    return { status: 200, body: { ok: true } }
   }
 
   try {
-    const { error } = await resend.emails.send({
-      from: env.contactFrom,
-      to: env.contactTo,
+    const { error } = await new Resend(config.resendApiKey).emails.send({
+      from: config.contactFrom,
+      to: config.contactTo,
       replyTo: email,
       subject: `[Portfólio] ${subject}`,
       text: `${name} <${email}>\n\n${message}`,
@@ -54,12 +61,12 @@ export async function handleContact(request: Request, response: Response) {
 
     if (error) {
       console.error('[contact] Resend recusou o envio:', error)
-      return response.status(502).json({ error: 'send_failed' })
+      return { status: 502, body: { error: 'send_failed' } }
     }
 
-    return response.status(200).json({ ok: true })
+    return { status: 200, body: { ok: true } }
   } catch (error) {
     console.error('[contact] falha inesperada ao enviar:', error)
-    return response.status(500).json({ error: 'send_failed' })
+    return { status: 500, body: { error: 'send_failed' } }
   }
 }
