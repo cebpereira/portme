@@ -12,7 +12,7 @@ export function Projects() {
         {content.projects.items.map((project) => (
           <li key={project.name} className="py-7 first:pt-0">
             <h3 className="text-lg leading-snug font-medium">{project.name}</h3>
-            <p className="mt-2 max-w-[60ch] leading-relaxed text-foreground/80">
+            <p className="mt-2 leading-relaxed text-foreground/80">
               {project.summary}
             </p>
 
