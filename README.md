@@ -1,15 +1,46 @@
 # Portfólio — Carlos Elandro
 
-Single-page bilíngue (PT/EN) em React + Tailwind + shadcn/ui, servido estático por
-nginx, com um serviço mínimo em Node só para o formulário de contato.
+Single-page bilíngue (PT/EN) em React + Tailwind + shadcn/ui, com um serviço mínimo
+só para o formulário de contato.
 
 ```
-web/   Vite + React + TypeScript → build estático → nginx
-api/   Express + zod + Resend    → POST /contact
+web/   Vite + React + TypeScript → build estático
+api/   zod + Resend              → POST /api/contact
 ```
 
-O browser fala apenas com a origem do `web`. O nginx encaminha `/api/` para o
-contêiner `api`, que nunca é exposto ao host — a chave do Resend não chega ao bundle.
+A regra do formulário vive em `api/src/contact.ts`, sem framework, e tem duas entradas:
+
+- `api/src/worker.ts` — produção, num Cloudflare Worker que também serve o build do `web`.
+- `api/src/index.ts` — Express, para rodar localmente com Docker.
+
+Nos dois casos o browser fala só com a própria origem e a chave do Resend não chega ao bundle.
+
+## Deploy na Cloudflare
+
+O `wrangler.jsonc` publica o Worker `portme` com o `web/dist` como assets estáticos.
+Rotas em `/api/*` passam pelo Worker; o resto é servido direto, com fallback de SPA.
+
+Deploy automático a cada push no `main`, configurado uma vez no painel da Cloudflare
+(**Workers & Pages → Create → Import a repository**):
+
+| Campo | Valor |
+| --- | --- |
+| Build command | `npm ci && npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | `/` |
+
+`CONTACT_TO` e `CONTACT_FROM` ficam em `vars` no `wrangler.jsonc`. A chave do Resend é
+secret, cadastrada uma vez:
+
+```bash
+npx wrangler secret put RESEND_API_KEY
+```
+
+Para testar o Worker localmente, crie um `.dev.vars` com `RESEND_API_KEY=...` e rode:
+
+```bash
+npm install && npm run build && npx wrangler dev --ip 127.0.0.1
+```
 
 ## Rodando com Docker
 
@@ -71,7 +102,7 @@ A seção de projetos some quando `projects.items` fica vazio nos dois arquivos.
 ## Proteções do formulário
 
 - Validação com o mesmo formato de schema nos dois lados (zod no browser e na API).
-- Limite de 5 envios por IP a cada 15 minutos.
+- Limite por IP: 2 envios por minuto na Cloudflare, 5 a cada 15 minutos no Express.
 - Honeypot invisível: mensagens de bot recebem `200` e são descartadas sem envio.
 - Erros do Resend ficam no log do servidor; o visitante vê só uma mensagem genérica.
 
