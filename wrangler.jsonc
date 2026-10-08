@@ -5,6 +5,10 @@
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
   "preview_urls": false,
+  "routes": [
+    { "pattern": "carloselandro.com.br", "custom_domain": true },
+    { "pattern": "www.carloselandro.com.br", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./web/dist",
     "binding": "ASSETS",
