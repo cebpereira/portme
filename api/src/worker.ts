@@ -49,7 +49,13 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const { pathname } = new URL(request.url)
+    const url = new URL(request.url)
+    const { pathname } = url
+
+    if (url.hostname.startsWith('www.')) {
+      url.hostname = url.hostname.slice(4)
+      return Response.redirect(url.toString(), 301)
+    }
 
     if (pathname === '/api/contact') {
       return handleContact(request, env)
