@@ -24,7 +24,7 @@
   ],
   "vars": {
     "CONTACT_TO": "c.elandro.bp@gmail.com",
-    "CONTACT_FROM": "onboarding@resend.dev"
+    "CONTACT_FROM": "contato@carloselandro.com.br"
   },
   "observability": {
     "logs": {
