@@ -3,22 +3,25 @@ import type { Content } from './types'
 export const pt: Content = {
   meta: {
     htmlLang: 'pt-BR',
-    title: 'Carlos Elandro — Desenvolvedor back-end',
+    title: 'Carlos Elandro | Desenvolvedor de software',
     description:
-      'Desenvolvedor back-end em Jequié, Bahia. PHP, Laravel, PostgreSQL e Docker em sistemas web de produção.',
+      'Desenvolvedor de software com foco em back-end, aberto a novas oportunidades. PHP, Laravel, React, PostgreSQL, Docker e AWS em sistemas web de produção, com IA no fluxo de desenvolvimento.',
   },
   person: {
     name: 'Carlos Elandro Bastos Pereira',
-    role: 'Desenvolvedor back-end',
+    role: 'Desenvolvedor de software',
+    focus: 'Foco em back-end',
     location: 'Jequié, Bahia',
     email: 'c.elandro.bp@gmail.com',
     phone: '(73) 98861-0735',
     phoneHref: 'tel:+5573988610735',
+    whatsapp: 'https://wa.me/5573988610735?text=Ol%C3%A1%2C%20Carlos%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade.',
     github: 'https://github.com/cebpereira',
     linkedin: 'https://www.linkedin.com/in/cebpereira/',
   },
   nav: {
     about: 'Sobre',
+    how: 'Como trabalho',
     experience: 'Experiência',
     stack: 'Tecnologias',
     projects: 'Projetos',
@@ -30,21 +33,120 @@ export const pt: Content = {
     skipToContent: 'Pular para o conteúdo',
   },
   hero: {
-    headline: ['Desenvolvedor', 'back-end.'],
-    lede: 'PHP e Laravel no núcleo, PostgreSQL embaixo, Docker em volta. Construo e sustento sistemas web em produção a partir de Jequié, Bahia.',
-    availability: 'Na Rhopen Consultoria desde setembro de 2025',
+    greeting: [
+      'Oi! Eu sou o Carlos, desenvolvedor de software.',
+      'Meu forte é o back-end com PHP e Laravel, mas cuido do caminho todo, da interface em React ao deploy na AWS. Escolha uma pergunta aqui embaixo ou role a página para ver tudo.',
+    ],
+    status: 'Aberto a novas oportunidades',
+    prompt: 'Perguntas que costumam me fazer',
+    typing: 'Carlos está digitando',
+    restart: 'Recomeçar a conversa',
+    conversationLabel: 'Conversa',
+    resume: { label: 'Baixar currículo', href: '/curriculo-carlos-elandro.pdf' },
+    whatsappLabel: 'Chamar no WhatsApp',
+    visitorLabel: 'Você',
+    questions: [
+      {
+        id: 'available',
+        question: 'Você está disponível?',
+        answer:
+          'Estou aberto a novas oportunidades, e o modelo de contratação a gente alinha na conversa. Se você tem uma vaga ou um projeto em mente, me chame pelo formulário no fim da página.',
+        link: { href: '#contact', label: 'Ir para o contato' },
+      },
+      {
+        id: 'what',
+        question: 'O que você faz, em poucas palavras?',
+        answer:
+          'Desenvolvo sistemas web de ponta a ponta, com mais força no back-end. Escrevo as regras de negócio, as integrações com outras plataformas e os bancos de dados, faço a interface quando o projeto pede e cuido do deploy. São sistemas em produção, que empresas usam todo dia para operar.',
+        link: { href: '#about', label: 'Ler mais sobre mim' },
+      },
+      {
+        id: 'solve',
+        question: 'Que tipo de problema você resolve?',
+        answer:
+          'Faço sistemas conversarem. Num grupo de empresas de proteção veicular e rastreamento, montei uma análise de crédito que roda sozinha. O lead chega do CRM, o sistema consulta as bases de crédito e devolve o resultado sem ninguém precisar intervir. Também transformo planilhas e PDFs de formatos diferentes em dados confiáveis.',
+        link: { href: '#experience', label: 'Ver os detalhes' },
+      },
+      {
+        id: 'stack',
+        question: 'Com quais tecnologias você trabalha?',
+        answer:
+          'PHP e Laravel no dia a dia, PostgreSQL para os dados, Docker e AWS para colocar tudo no ar. Quando o projeto pede, faço a interface também, em React com TypeScript.',
+        link: { href: '#stack', label: 'Ver todas as tecnologias' },
+      },
+      {
+        id: 'study',
+        question: 'Qual a sua formação?',
+        answer:
+          'Estou cursando Bacharelado em Sistemas de Informação na UESB. Falo português como língua nativa e tenho inglês básico.',
+        link: { href: '#education', label: 'Ver formação e cursos' },
+      },
+      {
+        id: 'ai',
+        question: 'Você usa IA no trabalho?',
+        answer:
+          'Uso, todos os dias. Trabalho com o Claude Code para pesquisar o código, planejar e implementar, com skills e agentes que eu mesmo escrevi para os projetos. A revisão e a responsabilidade pelo que vai para produção continuam comigo.',
+      },
+      {
+        id: 'own',
+        question: 'Você tem algum projeto próprio?',
+        answer:
+          'Tenho o Fiz a Nota, um micro SaaS de emissão de nota fiscal de serviço para MEI e pequenas empresas. O app e a landing page já estão no ar, em beta, e eu construí tudo sozinho, da API ao deploy.',
+        link: { href: '#projects', label: 'Ver o Fiz a Nota' },
+      },
+      {
+        id: 'resume',
+        question: 'Pode me mandar seu currículo?',
+        answer:
+          'Claro! É só baixar o PDF pelo link abaixo. Ele também fica no botão ao lado do meu nome, no topo da página.',
+        link: { href: '/curriculo-carlos-elandro.pdf', label: 'Baixar currículo (PDF)' },
+      },
+      {
+        id: 'contact',
+        question: 'Como eu falo com você?',
+        answer:
+          'Pelo formulário no fim da página, que chega direto no meu email, ou escrevendo para c.elandro.bp@gmail.com. Também respondo pelo LinkedIn.',
+        link: { href: '#contact', label: 'Ir para o contato' },
+      },
+    ],
   },
   about: {
-    heading: 'Sobre',
+    heading: 'Um pouco sobre mim',
     paragraphs: [
-      'Sou desenvolvedor back-end desde 2023, com PHP e Laravel no centro do trabalho. Construo e mantenho sistemas que estão em produção e sustentam a operação das empresas: gestão de benefícios corporativos, CRM com análise de crédito automatizada, integrações entre plataformas de terceiros.',
-      'Boa parte do meu trabalho é fazer sistemas conversarem: APIs REST, webhooks, filas e jobs assíncronos, sincronização entre plataformas com registro do que mudou. Também passo muito tempo com dados, da modelagem e das consultas em PostgreSQL à importação de planilhas e PDFs que chegam em formatos que ninguém controla.',
-      'Cuido do caminho até a produção: ambientes em Docker, deploy por CI/CD, observabilidade e servidores Linux. Quando a entrega pede, construo a interface também, em React com TypeScript.',
+      'Desenvolvo software desde 2023, com PHP e Laravel no centro do trabalho. Construo e mantenho sistemas que estão em produção e sustentam a operação das empresas, como gestão de benefícios corporativos, CRM com análise de crédito automatizada e integrações entre plataformas de terceiros.',
+      'Boa parte do meu trabalho é fazer sistemas conversarem, com APIs REST, webhooks, filas e jobs assíncronos e sincronização entre plataformas com registro do que mudou. Também passo muito tempo com dados, da modelagem e das consultas em PostgreSQL à importação de planilhas e PDFs que chegam em formatos que ninguém controla.',
+      'Também cuido do caminho até a produção, com ambientes em Docker, deploy por CI/CD, observabilidade e servidores Linux. Quando a entrega pede, construo a interface também, em React com TypeScript.',
+      'Uso IA como parte do processo. Com o Claude Code e skills que escrevo para cada projeto, pesquiso o código, planejo e implemento mais rápido, sem abrir mão de revisar tudo o que entrego.',
       'Prefiro mudanças que chegam em produção sem surpresa, com testes automatizados, análise estática e rollouts ensaiados antes numa cópia dos dados reais.',
     ],
   },
+  how: {
+    heading: 'Como eu trabalho',
+    items: [
+      {
+        title: 'Entendo o problema antes do código',
+        text:
+          'Converso com quem usa o sistema, leio o que já existe e planejo antes de implementar. Mudanças grandes ganham um documento de proposta para o time discutir.',
+      },
+      {
+        title: 'Nada chega em produção sem prova',
+        text:
+          'Testes automatizados, análise estática e revisão em cada pull request. Quando a mudança mexe com dados, ensaio antes numa cópia do banco de produção.',
+      },
+      {
+        title: 'IA como ferramenta, não como atalho',
+        text:
+          'Uso o Claude Code para pesquisar, planejar e implementar mais rápido. Reviso cada linha, e a responsabilidade pelo que vai para produção é minha.',
+      },
+      {
+        title: 'Falo a língua de quem não é técnico',
+        text:
+          'Explico o que mudou e por quê em termos de negócio, e documento as decisões para quem vier depois.',
+      },
+    ],
+  },
   experience: {
-    heading: 'Experiência',
+    heading: 'Por onde passei',
     currentLabel: 'Posição atual',
     items: [
       {
@@ -53,24 +155,27 @@ export const pt: Content = {
         role: 'Desenvolvedor back-end pleno',
         current: true,
         bullets: [
-          'Evolução da UseRH, plataforma de gestão de benefícios corporativos: monolito Laravel, área do cliente em React com Laravel como BFF e o e-Leader, produto novo em Laravel 13 com Inertia e React 19.',
-          'Processadores de fatura por operadora de saúde (SulAmérica, Unimed, Fortbras e outras), lendo XLSX, CSV e PDF e conciliando beneficiários.',
-          'Regras de auditoria que apontam divergências entre folha de pagamento e fatura, parametrizáveis por empresa.',
-          'Rollouts ensaiados em dump de produção, com métricas de antes e depois. Qualidade com PHPStan, Pint, PHPUnit e Vitest, em Scrum.',
+          'Evolução do Robô IG, plataforma que audita benefícios. Ela cruza a folha de pagamento com a folha de ponto e com as faturas de planos de saúde, odontológicos, seguros de vida, vale-alimentação, vale-refeição e vale-transporte, e aponta as divergências.',
+          'Mais de 50 leitores de fatura em PDF, XLSX, CSV e TXT, que conciliam cada beneficiário com a folha.',
+          'Motor de auditoria configurável por empresa, com a memória de cálculo de cada apontamento.',
+          'No e-Leader, produto de avaliação de liderança, desenvolvi a importação por planilha com validação, o cálculo de resultados e a trilha de auditoria.',
+          'Skills e agentes de IA para o time no Claude Code. Qualidade com PHPStan nível 9, testes automatizados no CI e RFCs de arquitetura.',
         ],
-        stack: ['PHP', 'Laravel', 'PostgreSQL', 'React.js', 'TypeScript', 'Inertia.js', 'Python', 'PHPStan', 'Docker', 'Git'],
+        stack: ['PHP', 'Laravel', 'PostgreSQL', 'React.js', 'TypeScript', 'Inertia.js', 'Python', 'PHPStan', 'Pest', 'Docker', 'Claude Code'],
       },
       {
         period: 'set 2025 — jun 2026',
         company: 'Arbus | Frotas Inteligentes',
         role: 'Desenvolvedor back-end pleno',
         bullets: [
-          'API central em Laravel que orquestra leads e integrações com Moskit, SGR Hinova, Serasa, Clicksign, Meta Ads e Google Ads, em jobs assíncronos sobre filas Redis.',
-          'Motor de análise de crédito por regras configuráveis: recebe o webhook do CRM, consulta o SGR, escala para o Serasa quando a régua pede e devolve o resultado ao lead.',
-          'Bridge de sincronização SGR ↔ Veniti por polling com diff de hash e log de auditoria, e painel administrativo em React com TypeScript.',
-          'Docker em três ambientes, deploy por GitHub Actions e observabilidade com Horizon, Pulse e Telescope nos servidores Linux.',
+          'Atuação também na Ponto Track Rastreamento e na América Proteção Veicular, empresas do mesmo grupo.',
+          'API central que recebe os leads dos formulários das landing pages em WordPress e dos anúncios, envia ao CRM e reprocessa sozinha o que falha.',
+          'Análise de crédito automatizada por regras configuráveis, com revisão manual quando o serviço de crédito está indisponível.',
+          'Sincronização de vendas, beneficiários e veículos entre as plataformas do grupo, com processamento assíncrono e log de auditoria.',
+          'Painel administrativo em React com TypeScript para configurar integrações e regras sem deploy.',
+          'Docker em três ambientes, deploy por GitHub Actions, observabilidade e agentes de IA configurados nos repositórios.',
         ],
-        stack: ['PHP', 'Laravel', 'Slim', 'PostgreSQL', 'Redis', 'React.js', 'TypeScript', 'Tailwind CSS', 'Docker', 'GitHub Actions', 'n8n'],
+        stack: ['PHP', 'Laravel', 'Slim', 'PostgreSQL', 'Redis', 'React.js', 'TypeScript', 'Tailwind CSS', 'Docker', 'GitHub Actions', 'n8n', 'WordPress', 'Claude Code'],
       },
       {
         period: 'nov 2024 — jun 2025',
@@ -115,7 +220,7 @@ export const pt: Content = {
     ],
   },
   skills: {
-    heading: 'Tecnologias',
+    heading: 'Com o que trabalho',
     groups: [
       { label: 'Back-end', items: ['PHP', 'Laravel', 'Slim', 'Python', 'Laravel Horizon'] },
       {
@@ -123,18 +228,19 @@ export const pt: Content = {
         items: ['React.js', 'TypeScript', 'Inertia.js', 'Vue.js', 'JavaScript', 'jQuery', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap'],
       },
       { label: 'Dados', items: ['PostgreSQL', 'MySQL', 'Microsoft SQL Server', 'Redis'] },
-      { label: 'Infraestrutura', items: ['Docker', 'Nginx', 'GitHub Actions', 'Linux', 'WSL', 'Git'] },
+      { label: 'Infraestrutura', items: ['AWS (EC2, VPC, S3)', 'Docker', 'Nginx', 'GitHub Actions', 'Linux', 'WSL', 'Git'] },
       { label: 'Qualidade', items: ['PHPUnit', 'Pest', 'PHPStan', 'Vitest'] },
+      { label: 'IA no desenvolvimento', items: ['Claude Code', 'Claude API', 'Skills e agentes'] },
       { label: 'Processos', items: ['Scrum', 'Kanban'] },
       { label: 'Plataformas', items: ['WordPress', 'Bubble.io'] },
     ],
   },
   education: {
-    heading: 'Formação',
+    heading: 'Onde estudo',
     items: [
       {
         title: 'Bacharelado em Sistemas de Informação',
-        institution: 'Universidade Estadual do Sudoeste da Bahia — UESB',
+        institution: 'Universidade Estadual do Sudoeste da Bahia (UESB)',
         note: 'Em andamento',
       },
     ],
@@ -145,7 +251,7 @@ export const pt: Content = {
     ],
   },
   certifications: {
-    heading: 'Certificações',
+    heading: 'Cursos e certificados',
     items: [
       { title: 'Introdução ao PHP', issuer: 'DIO', year: '2022' },
       { title: 'Desenvolvimento Avançado em PHP', issuer: 'DIO', year: '2023' },
@@ -154,12 +260,57 @@ export const pt: Content = {
     ],
   },
   projects: {
-    heading: 'Projetos',
+    heading: 'Projetos próprios e open source',
+    liveLabel: 'Acessar o site',
+    gallery: {
+      open: 'Ampliar a tela',
+      close: 'Fechar',
+      previous: 'Tela anterior',
+      next: 'Próxima tela',
+      counter: '{current} de {total}',
+    },
     items: [
+      {
+        name: 'Fiz a Nota',
+        summary:
+          'Meu micro SaaS, em beta, para emissão de nota fiscal de serviço (NFS-e) para MEI e pequenas empresas do Simples Nacional, integrada ao emissor nacional. Construí sozinho a API, o app e a landing page, com certificado digital A1, emissão, cancelamento e substituição validados no ambiente oficial, fluxo de caixa, assinatura por PIX, cartão e boleto e um resumo mensal escrito por IA, com os números calculados pelo sistema e os dados sensíveis mascarados. Roda na AWS, em instâncias EC2 numa VPC própria e com arquivos no S3.',
+        stack: ['Laravel', 'PHP 8.4', 'PostgreSQL', 'React', 'TypeScript', 'Docker', 'AWS EC2', 'AWS VPC', 'AWS S3', 'Claude API'],
+        liveUrl: 'https://fizanota.com.br',
+        images: [
+          {
+            src: '/projects/fizanota-landing.webp',
+            url: 'fizanota.com.br',
+            title: 'Landing page',
+            description:
+              'A porta de entrada do produto. Explica o que o Fiz a Nota faz, como começar e quais são os planos. Feita em React Router 7, separada do app.',
+          },
+          {
+            src: '/projects/fizanota-resumo-ia.webp',
+            url: 'app.fizanota.com.br',
+            title: 'Início com resumo escrito por IA',
+            description:
+              'Os números do mês são calculados pelo sistema e o Claude só escreve o texto em cima deles. CPF e CNPJ são mascarados antes do envio, e cada empresa tem um limite mensal de gerações.',
+          },
+          {
+            src: '/projects/fizanota-emissao.webp',
+            url: 'app.fizanota.com.br/notas/emitir',
+            title: 'Emissão em quatro passos',
+            description:
+              'Cliente, serviço, valores e revisão. A prévia ao lado mostra como a nota vai sair, e nada é enviado ao emissor nacional antes da confirmação.',
+          },
+          {
+            src: '/projects/fizanota-notas.webp',
+            url: 'app.fizanota.com.br/notas',
+            title: 'Lista de notas',
+            description:
+              'Todas as notas da empresa, cada uma com a sua situação (autorizada, não autorizada, cancelada ou substituída), com filtro por cliente e período.',
+          },
+        ],
+      },
       {
         name: 'Layers',
         summary:
-          'Pacote Laravel que gera repositories, interfaces e services para arquitetura em camadas e registra os bindings sozinho. Mantenho o fork: atualizei para Laravel 12 e PHP 8.2+, tipei os stubs e criei um comando que monta as camadas de todos os models de uma vez.',
+          'Pacote Laravel que gera repositories, interfaces e services para arquitetura em camadas e registra os bindings sozinho. No fork que mantenho, atualizei para Laravel 12 e PHP 8.2+, tipei os stubs e criei um comando que monta as camadas de todos os models de uma vez.',
         stack: ['PHP', 'Laravel', 'Composer'],
         repoUrl: 'https://github.com/cebpereira/Layers',
       },

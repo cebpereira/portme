@@ -1,32 +1,38 @@
-import { ContactForm } from '@/components/ContactForm'
+import { lazy, Suspense } from 'react'
 import { useContent } from '@/lib/i18n'
+
+const ContactForm = lazy(() =>
+  import('@/components/ContactForm').then((module) => ({ default: module.ContactForm })),
+)
 
 export function Contact() {
   const content = useContent()
 
   const direct = [
     { label: content.person.email, href: `mailto:${content.person.email}` },
-    { label: content.person.phone, href: content.person.phoneHref },
+    { label: 'WhatsApp', href: content.person.whatsapp },
     { label: 'GitHub', href: content.person.github },
     { label: 'LinkedIn', href: content.person.linkedin },
   ]
 
   return (
-    <section id="contact" className="mt-20 bg-brand-block text-chalk sm:mt-24">
+    <section id="contact" className="mt-20 bg-brand-block text-mist sm:mt-24">
       <div className="mx-auto grid max-w-[58rem] gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] lg:gap-x-16 lg:gap-y-10 lg:px-12">
         <div className="lg:col-start-1 lg:row-start-1">
           <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.02]">
             {content.contact.heading}
           </h2>
-          <p className="mt-4 max-w-[36ch] text-lg text-chalk/80">{content.contact.lede}</p>
+          <p className="mt-4 max-w-[36ch] text-lg text-mist/80">{content.contact.lede}</p>
         </div>
 
         <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
-          <ContactForm />
+          <Suspense fallback={<div className="min-h-[22rem]" aria-hidden="true" />}>
+            <ContactForm />
+          </Suspense>
         </div>
 
-        <div className="border-t border-chalk/25 pt-6 lg:col-start-1 lg:row-start-2 lg:border-t-0 lg:pt-0">
-          <p className="text-sm text-chalk/65">{content.contact.directLabel}</p>
+        <div className="border-t border-mist/25 pt-6 lg:col-start-1 lg:row-start-2 lg:border-t-0 lg:pt-0">
+          <p className="text-sm text-mist/65">{content.contact.directLabel}</p>
           <ul className="mt-3 space-y-1.5">
             {direct.map((item) => (
               <li key={item.href}>
@@ -34,7 +40,7 @@ export function Contact() {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="underline decoration-ochre decoration-2 underline-offset-4 transition-colors hover:text-ochre"
+                  className="underline decoration-warm-block decoration-2 underline-offset-4 transition-colors hover:text-warm-block"
                 >
                   {item.label}
                 </a>

@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 
 export const SECTION_IDS = [
   'about',
+  'how',
   'experience',
   'stack',
   'projects',
@@ -25,9 +26,9 @@ function LanguageToggle() {
       aria-label={content.nav.toggleLanguage}
       className="font-mono text-xs tracking-wide text-muted-foreground transition-colors hover:text-foreground"
     >
-      <span className={cn(language === 'pt' && 'font-medium text-cobalt')}>PT</span>
+      <span className={cn(language === 'pt' && 'font-medium text-brand')}>PT</span>
       <span className="px-1 text-border">/</span>
-      <span className={cn(language === 'en' && 'font-medium text-cobalt')}>EN</span>
+      <span className={cn(language === 'en' && 'font-medium text-brand')}>EN</span>
     </button>
   )
 }
@@ -59,7 +60,7 @@ function SocialLinks({ className }: { className?: string }) {
         target="_blank"
         rel="noreferrer"
         aria-label="GitHub"
-        className="text-muted-foreground transition-colors hover:text-cobalt"
+        className="text-muted-foreground transition-colors hover:text-brand"
       >
         <GithubIcon className="size-4" />
       </a>
@@ -68,7 +69,7 @@ function SocialLinks({ className }: { className?: string }) {
         target="_blank"
         rel="noreferrer"
         aria-label="LinkedIn"
-        className="text-muted-foreground transition-colors hover:text-cobalt"
+        className="text-muted-foreground transition-colors hover:text-brand"
       >
         <LinkedinIcon className="size-4" />
       </a>
@@ -82,6 +83,7 @@ export function Rail() {
 
   const items = [
     { id: 'about', label: content.nav.about },
+    { id: 'how', label: content.nav.how },
     { id: 'experience', label: content.nav.experience },
     { id: 'stack', label: content.nav.stack },
     { id: 'projects', label: content.nav.projects },
@@ -92,7 +94,7 @@ export function Rail() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 border-b border-cobalt/20 bg-background/90 backdrop-blur lg:hidden">
+      <header className="sticky top-0 z-30 border-b border-brand/20 bg-background/90 backdrop-blur lg:hidden">
         <div className="flex items-center justify-between px-5 py-3">
           <span className="font-display text-base">Carlos Elandro</span>
           <div className="flex items-center gap-4">
@@ -108,7 +110,7 @@ export function Rail() {
                   href={`#${item.id}`}
                   className={cn(
                     'transition-colors',
-                    active === item.id ? 'text-cobalt' : 'text-muted-foreground',
+                    active === item.id ? 'text-brand' : 'text-muted-foreground',
                   )}
                   aria-current={active === item.id ? 'true' : undefined}
                 >
@@ -120,7 +122,7 @@ export function Rail() {
         </nav>
       </header>
 
-      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-cobalt/20 px-8 py-10 lg:flex xl:w-68">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-brand/20 px-8 py-10 lg:flex xl:w-68">
         <div>
           <a href="#top" className="font-display block text-3xl leading-[1.05] xl:text-[2.125rem]">
             Carlos
@@ -128,6 +130,7 @@ export function Rail() {
             Elandro
           </a>
           <p className="mt-4 text-sm text-foreground">{content.person.role}</p>
+          <p className="text-sm text-brand">{content.person.focus}</p>
           <p className="text-sm text-muted-foreground">{content.person.location}</p>
         </div>
 
@@ -141,7 +144,7 @@ export function Rail() {
                   className={cn(
                     'group flex items-center gap-2.5 transition-colors',
                     active === item.id
-                      ? 'text-cobalt'
+                      ? 'text-brand'
                       : 'text-muted-foreground hover:text-foreground',
                   )}
                 >
@@ -149,7 +152,7 @@ export function Rail() {
                     aria-hidden="true"
                     className={cn(
                       'size-1.5 shrink-0 transition-colors',
-                      active === item.id ? 'bg-cobalt' : 'bg-transparent',
+                      active === item.id ? 'bg-brand' : 'bg-transparent',
                     )}
                   />
                   {item.label}

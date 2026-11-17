@@ -1,16 +1,34 @@
+import { ScreenGallery } from '@/components/ScreenGallery'
 import { Section } from '@/components/Section'
+import SpotlightCard from '@/components/SpotlightCard'
+import { useTheme } from '@/lib/theme'
 import { useContent } from '@/lib/i18n'
 
 export function Projects() {
   const content = useContent()
+  const { theme } = useTheme()
 
   if (content.projects.items.length === 0) return null
 
   return (
     <Section id="projects" heading={content.projects.heading}>
-      <ul className="divide-y divide-border">
+      <ul className="grid gap-4">
         {content.projects.items.map((project) => (
-          <li key={project.name} className="py-7 first:pt-0">
+          <li key={project.name}>
+            <SpotlightCard
+              theme={theme}
+              spotlightColor={theme === 'dark' ? '#3fb8c4' : '#0b7480'}
+              className="h-full"
+              style={
+                {
+                  '--spotlight-card-surface': 'var(--card)',
+                  '--spotlight-card-border': 'var(--border)',
+                } as React.CSSProperties
+              }
+            >
+            {project.images && project.images.length > 0 && (
+              <ScreenGallery project={project.name} images={project.images} />
+            )}
             <h3 className="text-lg leading-snug font-medium">{project.name}</h3>
             <p className="mt-2 leading-relaxed text-foreground/80">
               {project.summary}
@@ -33,7 +51,7 @@ export function Projects() {
                   href={project.repoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-cobalt underline decoration-ochre underline-offset-4"
+                  className="relative z-[2] text-brand underline decoration-warm underline-offset-4"
                 >
                   GitHub
                 </a>
@@ -43,12 +61,13 @@ export function Projects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-cobalt underline decoration-ochre underline-offset-4"
+                  className="relative z-[2] text-brand underline decoration-warm underline-offset-4"
                 >
-                  Live
+                  {content.projects.liveLabel}
                 </a>
               )}
             </div>
+            </SpotlightCard>
           </li>
         ))}
       </ul>
