@@ -15,7 +15,7 @@ export function Education() {
             <p className="font-mono text-xs leading-6 text-muted-foreground">{item.note}</p>
             <div>
               <h3 className="text-lg leading-snug font-medium">{item.title}</h3>
-              <p className="text-cobalt">{item.institution}</p>
+              <p className="text-brand">{item.institution}</p>
             </div>
           </div>
         ))}

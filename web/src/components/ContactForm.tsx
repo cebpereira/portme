@@ -25,7 +25,7 @@ type FormValues = z.infer<ReturnType<typeof buildSchema>>
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null
-  return <p className="mt-1.5 text-sm text-ochre">{message}</p>
+  return <p className="mt-1.5 text-sm text-warm-block">{message}</p>
 }
 
 export function ContactForm() {
@@ -59,7 +59,7 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    'border-chalk/45 bg-chalk/5 text-chalk placeholder:text-chalk/45 selection:bg-chalk selection:text-brand-block focus-visible:border-ochre aria-invalid:border-ochre aria-invalid:ring-0'
+    'border-mist/45 bg-mist/5 text-mist placeholder:text-mist/45 selection:bg-mist selection:text-brand-block focus-visible:border-warm-block aria-invalid:border-warm-block aria-invalid:ring-0'
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="lg:pt-2">
@@ -70,7 +70,7 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <Label htmlFor="name" className="text-chalk/80">
+          <Label htmlFor="name" className="text-mist/80">
             {content.contact.fields.name}
           </Label>
           <Input
@@ -85,7 +85,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <Label htmlFor="email" className="text-chalk/80">
+          <Label htmlFor="email" className="text-mist/80">
             {content.contact.fields.email}
           </Label>
           <Input
@@ -102,7 +102,7 @@ export function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <Label htmlFor="subject" className="text-chalk/80">
+        <Label htmlFor="subject" className="text-mist/80">
           {content.contact.fields.subject}
         </Label>
         <Input
@@ -116,7 +116,7 @@ export function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <Label htmlFor="message" className="text-chalk/80">
+        <Label htmlFor="message" className="text-mist/80">
           {content.contact.fields.message}
         </Label>
         <Textarea
@@ -130,13 +130,15 @@ export function ContactForm() {
         <FieldError message={errors.message?.message} />
       </div>
 
-      <Button
-        type="submit"
-        disabled={submitting}
-        className="mt-7 bg-chalk text-brand-block hover:bg-ochre hover:text-ink disabled:opacity-60"
-      >
-        {submitting ? content.contact.submitting : content.contact.submit}
-      </Button>
+      <div className="mt-7">
+        <Button
+          type="submit"
+          disabled={submitting}
+          className="bg-mist text-brand-block hover:bg-warm-block hover:text-night disabled:opacity-60"
+        >
+          {submitting ? content.contact.submitting : content.contact.submit}
+        </Button>
+      </div>
     </form>
   )
 }
