@@ -1,10 +1,13 @@
 import { About } from '@/components/About'
+import { Backdrop } from '@/components/Backdrop'
+import { ScrollProgress } from '@/components/ScrollProgress'
 import { Certifications } from '@/components/Certifications'
 import { Contact } from '@/components/Contact'
 import { Education } from '@/components/Education'
 import { Experience } from '@/components/Experience'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
+import { HowIWork } from '@/components/HowIWork'
 import { Projects } from '@/components/Projects'
 import { Rail } from '@/components/Rail'
 import { Skills } from '@/components/Skills'
@@ -16,9 +19,11 @@ export default function App() {
 
   return (
     <>
+      <Backdrop />
+      <ScrollProgress />
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-cobalt focus:px-4 focus:py-2 focus:text-chalk"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-brand focus:px-4 focus:py-2 focus:text-mist"
       >
         {content.nav.skipToContent}
       </a>
@@ -30,6 +35,7 @@ export default function App() {
           <div className="mx-auto max-w-[58rem] space-y-14 px-5 sm:space-y-16 sm:px-8 lg:px-12">
             <Hero />
             <About />
+            <HowIWork />
             <Experience />
             <Skills />
             <Projects />

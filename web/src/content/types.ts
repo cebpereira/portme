@@ -26,12 +26,27 @@ export interface CertificationItem {
   year: string
 }
 
+export interface ProjectImage {
+  src: string
+  url: string
+  title: string
+  description: string
+}
+
 export interface ProjectItem {
   name: string
   summary: string
   stack: string[]
   repoUrl?: string
   liveUrl?: string
+  images?: ProjectImage[]
+}
+
+export interface HeroQuestion {
+  id: string
+  question: string
+  answer: string
+  link?: { href: string; label: string }
 }
 
 export interface Content {
@@ -43,15 +58,18 @@ export interface Content {
   person: {
     name: string
     role: string
+    focus: string
     location: string
     email: string
     phone: string
     phoneHref: string
+    whatsapp: string
     github: string
     linkedin: string
   }
   nav: {
     about: string
+    how: string
     experience: string
     stack: string
     projects: string
@@ -63,13 +81,24 @@ export interface Content {
     skipToContent: string
   }
   hero: {
-    headline: string[]
-    lede: string
-    availability: string
+    greeting: string[]
+    status: string
+    prompt: string
+    typing: string
+    restart: string
+    conversationLabel: string
+    resume: { label: string; href: string }
+    whatsappLabel: string
+    visitorLabel: string
+    questions: HeroQuestion[]
   }
   about: {
     heading: string
     paragraphs: string[]
+  }
+  how: {
+    heading: string
+    items: { title: string; text: string }[]
   }
   experience: {
     heading: string
@@ -92,6 +121,14 @@ export interface Content {
   }
   projects: {
     heading: string
+    liveLabel: string
+    gallery: {
+      open: string
+      close: string
+      previous: string
+      next: string
+      counter: string
+    }
     items: ProjectItem[]
   }
   contact: {
