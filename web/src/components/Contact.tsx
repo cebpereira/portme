@@ -1,5 +1,9 @@
-import { ContactForm } from '@/components/ContactForm'
+import { lazy, Suspense } from 'react'
 import { useContent } from '@/lib/i18n'
+
+const ContactForm = lazy(() =>
+  import('@/components/ContactForm').then((module) => ({ default: module.ContactForm })),
+)
 
 export function Contact() {
   const content = useContent()
@@ -22,7 +26,9 @@ export function Contact() {
         </div>
 
         <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
-          <ContactForm />
+          <Suspense fallback={<div className="min-h-[22rem]" aria-hidden="true" />}>
+            <ContactForm />
+          </Suspense>
         </div>
 
         <div className="border-t border-mist/25 pt-6 lg:col-start-1 lg:row-start-2 lg:border-t-0 lg:pt-0">
