@@ -8,5 +8,6 @@ dist/
 # Local
 .playwright-mcp/
 *.pdf
+!web/public/curriculo-carlos-elandro.pdf
 .dev.vars
 .wrangler/
